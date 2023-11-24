@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="game-container">
+      <div id="score-display">Score 0</div>
+      <canvas id="canvas" width="400" height="600"></canvas>
+      <button id="restartButton" style="display: none">Restart</button>
+    </div>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #73c8a9;
+        font-family: "Press Start 2P", cursive;
+        background-image: linear-gradient(to right, #72c89a, #373b44);
+      }
+
+      #game-container {
+        position: relative;
+        width: 400px;
+        height: 600px;
+        margin: 0 auto;
+      }
+
+      canvas {
+        border: 5px solid #2e2e2e;
+        border-radius: 10px;
+        display: block;
+        margin: 50px auto;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-image: url("assets/bg.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 1;
+      }
+
+      #score-display {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-size: 2em;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+      }
+
+      #restartButton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: #2e2e2e;
+        color: #fff;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 2;
+      }
+    </style>
+  </body>
+</html>
