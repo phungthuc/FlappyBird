@@ -85,6 +85,7 @@ function main() {
   let scoreDiv = document.getElementById("score-display");
   let score = 0;
   let isEndGame = false;
+  let isLose = false;
   let counted = false;
 
   var vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
@@ -243,6 +244,7 @@ function main() {
   requestAnimationFrame(render);
 
   function update(deltaTime) {
+    if(isLose) return;
     if (isEndGame) {
       // alert("Game Over!");
       console.log("game over!");
@@ -250,7 +252,9 @@ function main() {
       restartButton.style.display = "block";
       restartButton.addEventListener("click", function () {
         location.reload();
+        isLose = false;
       });
+      isLose = true;
       return;
     }
     checkCollision();
